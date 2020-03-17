@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}登陆{% endblock %}
+{% block content %}
+    <h3 style="text-align: center">
+        login your account
+    </h3>
+    <div class="container">
+        {# quick_form默认就是post方法，若单引号反而出错 #}
+        {{ wtf.quick_form(form,  method="post") }}
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% endblock %}

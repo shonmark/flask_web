@@ -1,0 +1,39 @@
+18
+15
+淮安市气象台2017年11月17日20时15分发布大风黄色预警信号。目前我市部分地区已经出现阵风8级以上偏北大风, 并将持续。请注意防范。
+黄色预警
+大风
+def get_weather():
+    data = {'city': u'huaian',
+            'appkey': 'a7ecfb937ab8b4e02ec263e52277ad1b'}
+    url = 'https://way.jd.com/he/alarm'
+    response = requests.get(url, data)
+    response = response.text
+    json_data = json.loads(response)
+    a = json_data["result"]["HeWeather5"]
+    txt = a[0]['alarms'][0]['txt']
+    level = a[0]['alarms'][0]['level']
+    type = a[0]['alarms'][0]['type']
+    return [txt, level, type]
+       # time_file = open('D:/flask_web/app/tips.txt', 'r')
+        # all_lines = time_file.readlines()
+        # day = all_lines[0]
+        # hour = all_lines[1]
+        # type = all_lines[3]
+        # level = all_lines[4]
+        # time_file.close()
+        # time = datetime.datetime.now()
+        # if (time.day - int(day) != 0 or time.hour - int(hour) > 6):
+        #     time_file = open('D:/flask_web/app/tips.txt', 'w+')
+        #     time_file.truncate()
+        #     time_file.close()
+        #     time_file = open('D:/flask_web/app/tips.txt', 'a')
+        #     all_lines[0] = time.day
+        #     all_lines[1] = time.hour
+        #     weather = get_weather()
+        #     all_lines.extend(weather)
+        #     for line in all_lines:
+        #         time_file.write(str(line)+'\n')
+        #     time_file.close()
+        #     print('time changed')
+        # weather = [type, level]
