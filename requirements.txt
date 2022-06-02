@@ -21,7 +21,7 @@ Flask-Script==2.0.6
 Flask-SQLAlchemy==2.3.2
 Flask-User==0.6.19
 Flask-WTF==0.14.2
-html5lib==0.9999999
+html5lib==0.99999999
 idna==2.6
 itsdangerous==0.24
 Jinja2==2.9.6
