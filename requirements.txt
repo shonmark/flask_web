@@ -30,7 +30,7 @@ Markdown==2.6.9
 MarkupSafe==1.0
 numpy==1.13.3
 passlib==1.7.1
-protobuf==3.4.0
+protobuf==3.18.3
 pycparser==2.18
 pycryptodome==3.4.7
 PyMySQL==0.7.11
